@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Swift类和结构体 | Hexo</title>
+  <meta name="description" content="Swift类和结构体概念 基本概念：类和结构体是人们构建代码所用的一种通用且灵活的构造体。 与其他编程语言所不同的是，Swift 并不要求你为自定义类和结构去创建独立的接口和实现文件。 你所要做的是在一个单一文件中定义一个类或者结构体，系统将会自动生成面向其它代码的外部接口。 对象：通常一个类的实例被称为对象。  比较相同点 定义属性用于存储值 定义方法用于提供功能 定义下标操作使得可以通过下标语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift类和结构体">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;03&#x2F;Swift%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93&#x2F;index.html">
+<meta property="og:site_name" content="厚积薄发">
+<meta property="og:description" content="Swift类和结构体概念 基本概念：类和结构体是人们构建代码所用的一种通用且灵活的构造体。 与其他编程语言所不同的是，Swift 并不要求你为自定义类和结构去创建独立的接口和实现文件。 你所要做的是在一个单一文件中定义一个类或者结构体，系统将会自动生成面向其它代码的外部接口。 对象：通常一个类的实例被称为对象。  比较相同点 定义属性用于存储值 定义方法用于提供功能 定义下标操作使得可以通过下标语">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-03T07:17:03.587Z">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2020/04/03/Swift%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="厚积薄发" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/03/swift%20%E5%8F%B9%E5%8F%B7%E5%92%8C%E9%97%AE%E5%8F%B7/" class="title">swift 叹号和问号</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-03T07:17:03.587Z" itemprop="datePublished">2020-04-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/03/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/" class="title">项目中的git基本使用规范</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-03T07:17:03.587Z" itemprop="datePublished">2020-04-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/03/Swift%20%E4%B8%8B%E6%A0%87%E8%AF%AD%E6%B3%95/" class="title">Swift 下标语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/03/Swift%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/" class="title">Swift类和结构体</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/03/Swiftlint%E7%94%A8%E6%B3%95/" class="title">Swiftlint用法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Swift类和结构体" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Swift类和结构体
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/04/03/Swift%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/" class="article-date">
+	  <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/03/Swift%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="Swift类和结构体"><a href="#Swift类和结构体" class="headerlink" title="Swift类和结构体"></a>Swift类和结构体</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>基本概念：类和结构体是人们构建代码所用的一种通用且灵活的构造体。</li>
+<li>与其他编程语言所不同的是，<strong>Swift 并不要求你为自定义类和结构去创建独立的接口和实现文件。</strong> 你所要做的是在一个单一文件中定义一个类或者结构体，<strong>系统将会自动生成面向其它代码的外部接口</strong>。</li>
+<li>对象：通常一个<strong>类的实例</strong>被称为对象。</li>
+</ul>
+<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><h5 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h5><ul>
+<li>定义属性用于存储值</li>
+<li>定义方法用于提供功能</li>
+<li>定义<a href="https://github.com/liuxueming/lxm..github.io/blob/d57151d077e0c92d0bc33f6ae448f44ea8215519/Swift%20%E4%B8%8B%E6%A0%87%E8%AF%AD%E6%B3%95.md" target="_blank" rel="noopener">下标操作</a>使得可以通过下标语法来访问实例所包含的值</li>
+<li>定义构造器用于生成初始化值</li>
+<li>通过扩展以增加默认实现的功能</li>
+<li>实现协议以提供某种标准功能</li>
+</ul>
+<h5 id="不同点-类的附加功能"><a href="#不同点-类的附加功能" class="headerlink" title="不同点(类的附加功能)"></a>不同点(类的附加功能)</h5><ul>
+<li><a href="http://www.swift51.com/swift4.0/chapter2/13_Inheritance.html" target="_blank" rel="noopener">继承</a> 允许一个类继承另一个类的特征</li>
+<li><a href="http://www.swift51.com/swift4.0/chapter2/19_Type_Casting.html" target="_blank" rel="noopener">类型转换</a> 允许在运行时检查和解释一个类实例的类型</li>
+<li><a href="http://www.swift51.com/swift4.0/chapter2/15_Deinitialization.html" target="_blank" rel="noopener">析构器</a> 允许一个类实例释放任何其所被分配的资源</li>
+<li><a href="http://www.swift51.com/swift4.0/chapter2/16_Automatic_Reference_Counting.html" target="_blank" rel="noopener">引用计数</a> 允许对一个类的多次引用</li>
+</ul>
+<h3 id="定义语法"><a href="#定义语法" class="headerlink" title="定义语法"></a>定义语法</h3><ul>
+<li><p>语法：通过关键字<strong>class</strong>和<strong>struct</strong>来分别表示类和结构体。<pre> class SomeClass {<br>  // 在这里定义类<br>}<br>struct SomeStructure {<br>  // 在这里定义结构体<br>}</pre></p>
+</li>
+<li><p>注意：请使用<strong>UpperCamelCase</strong>这种方式来命名（如SomeClass和SomeStructure等。相反的，请使用<strong>lowerCamelCase</strong>这种方式为属性和方法命名（如framerate和incrementCount），以便和类型名区分</p>
+</li>
+<li><pre>struct Resolution {
+    var width = 0
+    var height = 0
+}
+class VideoMode {
+    var resolution = Resolution()
+    var interlaced = false
+    var frameRate = 0.0
+    var name: String?
+}</pre>
+
+</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><ul>
+<li>语法：结构体和类都使用构造器语法来生成新的实例。最简单形式是在结构体或者类的类型名称后跟随一对<strong>空括号</strong>。通过这种方式所创建的类或者结构体实例，其属性均会被初始化为默认值。<pre>let someResolution = Resolution()<br>let someVideoMode = VideoMode()</pre></li>
+</ul>
+<h3 id="属性访问"><a href="#属性访问" class="headerlink" title="属性访问"></a>属性访问</h3><ul>
+<li>语法:<strong>点语法</strong>，你可以访问实例的属性。其语法规则是，实例名后面紧跟属性名，两者通过点号(.)连接,也可以访问子属性。<pre>print("The width of someVideoMode is (someVideoMode.resolution.width)")<br>// 打印 "The width of someVideoMode is 0"</pre></li>
+<li>注意:与 Objective-C 语言不同的是，Swift 允许直接设置结构体属性的子属性。<pre>someVideoMode.resolution.width = 1280<br>print("The width of someVideoMode is now (someVideoMode.resolution.width)")<br>// 打印 "The width of someVideoMode is now 1280"</pre></li>
+</ul>
+<h3 id="结构体类型的成员逐一构造器"><a href="#结构体类型的成员逐一构造器" class="headerlink" title="结构体类型的成员逐一构造器"></a>结构体类型的成员逐一构造器</h3><ul>
+<li>所有结<strong>构体都有一个自动生成的成员逐一构造器</strong>，用于初始化新结构体实例中成员的属性。新实例中各个属性的初始值可以通过属性的名称传递到成员逐一构造器之中：<pre>let vga = Resolution(width:640, height: 480)
+</pre></li>
+<li>注意:类实例没有默认的成员逐一构造器</li>
+</ul>
+<h3 id="类和结构体的类型"><a href="#类和结构体的类型" class="headerlink" title="类和结构体的类型"></a>类和结构体的类型</h3><h5 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h5><ul>
+<li>结构体和枚举是<strong>值类型</strong>：值类型被赋予给一个变量、常量或者被传递给一个函数的时候，其值会被拷贝。</li>
+<li>在 Swift 中，所有的基本类型：整数（Integer）、浮点数（floating-point）、布尔值（Boolean）、字符串（string)、数组（array）和字典（dictionary），都是值类型，并且在底层都是以结构体的形式所实现。</li>
+<li>Objective-c里的NSString、NSDictionary、NSArray都是引用类型)</li>
+</ul>
+<h5 id="类"><a href="#类" class="headerlink" title="类"></a>类</h5><ul>
+<li>类是<strong>引用类型</strong>：引用类型在被赋予到一个变量、常量或者被传递到一个函数时，其值不会被拷贝。因此，引用的是已存在的实例本身而不是其拷贝。</li>
+<li>等价于（<strong>===</strong>）：表示两个类类型（class type）的常量或者变量引用同一个类实例。</li>
+<li>不等价于（<strong>!==</strong>）：不是引用同一个实例</li>
+<li>等于（<strong>==</strong>）：表示两个实例的<strong>值“相等”或“相同”</strong>，判定时要遵照设计者定义的评判标准，因此相对于“相等”来说，这是一种更加合适的叫法。<a href="http://www.swift51.com/swift4.0/chapter2/25_Advanced_Operators.html#equivalence_operators" target="_blank" rel="noopener">等价运算符</a> </li>
+</ul>
+<h3 id="类和结构体的选择"><a href="#类和结构体的选择" class="headerlink" title="类和结构体的选择"></a>类和结构体的选择</h3><h5 id="按照通用的准则，当符合一条或多条以下条件时，请考虑构建结构体"><a href="#按照通用的准则，当符合一条或多条以下条件时，请考虑构建结构体" class="headerlink" title="按照通用的准则，当符合一条或多条以下条件时，请考虑构建结构体"></a>按照通用的准则，当符合一条或多条以下条件时，请考虑构建结构体</h5><ol>
+<li>该数据结构的主要目的是用来<strong>封装少量相关简单数据值</strong>。</li>
+<li>有理由预计该数据结构的实例在被赋值或传递时，封装的数据将会被拷贝而不是被引用。</li>
+<li>该数据结构中储存的值类型属性，也应该被拷贝，而不是被引用。</li>
+<li>该数据结构不需要去继承另一个既有类型的属性或者行为</li>
+</ol>
+<ul>
+<li>比如：<ol>
+<li>几何形状的大小，封装一个width属性和height属性，两者均为Double类型。</li>
+<li>一定范围内的路径，封装一个start属性和length属性，两者均为Int类型。</li>
+<li>三维坐标系内一点，封装x，y和z属性，三者均为Double类型。</li>
+</ol>
+</li>
+</ul>
+<h5 id="其他场景，请考虑使用类。"><a href="#其他场景，请考虑使用类。" class="headerlink" title="其他场景，请考虑使用类。"></a>其他场景，请考虑使用类。</h5>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/04/03/Swift%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/" title="Swift类和结构体" target="_blank" rel="external">http://yoursite.com/2020/04/03/Swift%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">昵称</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/04/03/Swift%20%E4%B8%8B%E6%A0%87%E8%AF%AD%E6%B3%95/" title="Swift 下标语法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/04/03/Swiftlint%E7%94%A8%E6%B3%95/" title="Swiftlint用法"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

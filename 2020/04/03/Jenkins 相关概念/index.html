@@ -17,15 +17,18 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Archive | Hexo</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="厚积薄发">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+  <title>Jenkins 相关概念 | Hexo</title>
+  <meta name="description" content="Jenkins 踩坑指南 ocunit2junit：一个脚本，用于将xcodebuild中的OCUnit输出转换为JUnit使用的XML格式。 允许在像Jenkins这样的连续集成服务器上构建XCode，并提供测试报告！  slather:为Xcode项目生成测试覆盖率报告, 并且可以挂进CI。  2&amp;gt;&amp;amp;1:将标准错误也输出到标准输出当中。  证书：Credentials中添加新的你">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins 相关概念">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;03&#x2F;Jenkins%20%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5&#x2F;index.html">
 <meta property="og:site_name" content="厚积薄发">
+<meta property="og:description" content="Jenkins 踩坑指南 ocunit2junit：一个脚本，用于将xcodebuild中的OCUnit输出转换为JUnit使用的XML格式。 允许在像Jenkins这样的连续集成服务器上构建XCode，并提供测试报告！  slather:为Xcode项目生成测试覆盖率报告, 并且可以挂进CI。  2&amp;gt;&amp;amp;1:将标准错误也输出到标准输出当中。  证书：Credentials中添加新的你">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-03T07:17:03.585Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/archives/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/04/03/Jenkins%20%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/index.html">
   
     <link rel="alternate" href="/atom.xml" title="厚积薄发" type="application/atom+xml">
   
@@ -318,164 +321,201 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">Archive</h1>
-	      <p class="text-muted">Total 10 articles</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-Jenkins 相关概念" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Jenkins 相关概念
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2020" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2020
-            </a>
-            <!-- <a href="/archives/2020" class="archive-year">2020</a> -->
-          </h3>
-        </div>
-        <div id="collapse2020" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2020">
-        <div class="panel-body">
-          <div class="collection">
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/04/03/Jenkins%20%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" class="article-date">
+	  <time datetime="2020-04-03T07:17:03.585Z" itemprop="datePublished">2020-04-03</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/03/Jenkins%20%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="Jenkins-踩坑指南"><a href="#Jenkins-踩坑指南" class="headerlink" title="Jenkins 踩坑指南"></a>Jenkins 踩坑指南</h3><ul>
+<li><p><a href="https://github.com/ciryon/OCUnit2JUnit" target="_blank" rel="noopener"><strong>ocunit2junit</strong></a>：一个脚本，用于将xcodebuild中的OCUnit输出转换为JUnit使用的XML格式。 允许在像Jenkins这样的连续集成服务器上构建XCode，并提供测试报告！</p>
+</li>
+<li><p><a href="https://github.com/SlatherOrg/slather" target="_blank" rel="noopener"><strong>slather</strong></a>:为Xcode项目生成测试覆盖率报告, 并且可以挂进CI。</p>
+</li>
+<li><p><a href="https://blog.csdn.net/zhaominpro/article/details/82630528" target="_blank" rel="noopener"><strong>2&gt;&amp;1</strong></a>:将标准错误也输出到标准输出当中。</p>
+</li>
+<li><p>证书：Credentials中添加新的你所需的授权，例如远程仓库的账号密码或ssh私钥信息等，上传完成后，Jenkins会为每一个授权赋予一个加密并提供对应此授权的ID，之后需要用到的地方，选择或填写对应的ID即可。<br><a href="https://jenkins.io/zh/doc/book/using/using-credentials/" target="_blank" rel="noopener">使用 credentials </a><br><a href="https://www.jianshu.com/p/b197f3fc1789" target="_blank" rel="noopener">CI环境iOS入门篇</a></p>
+</li>
+<li><p>触发器</p>
+<ul>
+<li><a href="https://www.cnblogs.com/Rocky_/p/8297260.html" target="_blank" rel="noopener"><strong>Trigger builds remotely</strong></a> :通过生成token，可以远程构建。即生成token后可以按照指定的URL去远程触发这个任务，而不用登录系统。</li>
+<li>Build after other projects are built:在构建其他项目后构建，此时会设置一个观察对象</li>
+<li>Build periodically：周期性的构建，<strong>不管源码有没有变化，都会构建</strong>。</li>
+<li>Poll SCM:周期性构建，<strong>源码发生变化才构建</strong>。</li>
+<li><a href="https://blog.csdn.net/boling_cavalry/article/details/78943061" target="_blank" rel="noopener">GitHub hook trigger for GITScm polling</a>：这是GitHub的一个插件。可以通过配置GitHub相关功能，配合这个插件实现，向GitHub提交代码时触发Jenkins自动构建的功能。<ul>
+<li>注意1：<a href="https://blog.csdn.net/qq_21768483/article/details/80177920" target="_blank" rel="noopener">Hook URL的配置方式</a>          </li>
+<li>注意2：localhost无法直接配置，需要内网转发外网，可以借助<a href="https://stackoverflow.com/questions/42037370/jenkinsgithub-we-couldn-t-deliver-this-payload-couldnt-connect-to-server" target="_blank" rel="noopener"><strong>ngrok</strong></a>。<a href="https://blog.csdn.net/sunansheng/article/details/48372149" target="_blank" rel="noopener">原理</a></li>
+<li>注意3：GitHub Webhooks Secret 和 Jenkins Secret  要配置一样（都是通过 GitHub Developer settings生成的）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>常见问题</p>
+<ul>
+<li>jenkins-doesnt-have-label-xxxx ：<a href="https://stackoverflow.com/questions/52644447/jenkins-doesnt-have-label-linux" target="_blank" rel="noopener">需要先在Jenkins配置<strong>Jenkins-&gt;Manage Nodes</strong></a></li>
+<li><a href="https://discuss.circleci.com/t/fastlane-failed-to-run-pod-install/3873/6" target="_blank" rel="noopener">fastlane-failed-to-run-pod-install</a></li>
+<li>如果Jenkins是通过brew安装的。<ul>
+<li>启动命令：<code>brew services start jenkins-lts</code></li>
+<li>brew安装关闭命令：<code>brew services stop jenkins-lts</code></li>
+<li><a href="https://stackoverflow.com/questions/7139338/change-jenkins-port-on-macos" target="_blank" rel="noopener">修改port方法</a></li>
+<li>生成pipeline语法：通过<a href="http://localhost:8888/job/iOS%20AutoTest-Pipeline/pipeline-syntax/" target="_blank" rel="noopener">在线语法生成器</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/04/03/Jenkins%20%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" title="Jenkins 相关概念" target="_blank" rel="external">http://yoursite.com/2020/04/03/Jenkins%20%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</a>
+    </li>
     
-<a href="/2020/04/03/swift%20%E5%8F%B9%E5%8F%B7%E5%92%8C%E9%97%AE%E5%8F%B7/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.587Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> swift 叹号和问号
-</a>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
 
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">昵称</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
-    
-    
-<a href="/2020/04/03/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.587Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 项目中的git基本使用规范
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/03/Swift%20%E4%B8%8B%E6%A0%87%E8%AF%AD%E6%B3%95/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Swift 下标语法
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/03/Swift%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Swift类和结构体
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/03/Swiftlint%E7%94%A8%E6%B3%95/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Swiftlint用法
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/03/Swift%20Lazy%E8%AF%A6%E8%A7%A3/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Swift Lazy详解
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/03/Swift%20%E6%9E%9A%E4%B8%BE/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Swift 枚举
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/03/Swift%20%E9%97%AD%E5%8C%85/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.586Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Swift 闭包
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/03/GraphQL%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.585Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> GraphQL 学习笔记
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/03/Redux%20%E7%AC%94%E8%AE%B0/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-03T07:17:03.585Z" itemprop="datePublished">2020-04-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Redux 笔记
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
+  <section id="comments">
   	
+      <div id="vcomments"></div>
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev disabled">
-                <a href="javascript:;" target="_blank" rel="noopener">
-                    <i class="icon icon-angle-left"></i>
-                    Prev
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/archives/page/2/">
-                    Next
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 1 of 2</div>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/04/03/Redux%20%E7%AC%94%E8%AE%B0/" title="Redux 笔记"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/04/03/README/" title="README"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -530,6 +570,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
