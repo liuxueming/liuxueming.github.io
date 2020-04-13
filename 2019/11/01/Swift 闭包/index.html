@@ -17,18 +17,18 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>友情链接 | DarkKnight</title>
-  <meta name="description" content="测试des">
-<meta property="og:type" content="website">
-<meta property="og:title" content="友情链接">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;links&#x2F;index.html">
+  <title>Swift 闭包 | DarkKnight</title>
+  <meta name="description" content="概念 是自包含的函数代码块，可以在代码中被传递和使用。Swift 中的闭包与 C 和 Objective-C 中的代码块（blocks）以及其他一些编程语言中的匿名函数比较相似。  相对于Objective-C 有如下优化点  利用上下文推断参数和返回值类型 隐式返回单表达式闭包，即单表达式闭包可以省略 return 关键字  参数名称缩写 尾随闭包语法    闭包表达式 语法{ (paramet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift 闭包">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;Swift%20%E9%97%AD%E5%8C%85&#x2F;index.html">
 <meta property="og:site_name" content="测试title">
-<meta property="og:description" content="测试des">
+<meta property="og:description" content="概念 是自包含的函数代码块，可以在代码中被传递和使用。Swift 中的闭包与 C 和 Objective-C 中的代码块（blocks）以及其他一些编程语言中的匿名函数比较相似。  相对于Objective-C 有如下优化点  利用上下文推断参数和返回值类型 隐式返回单表达式闭包，即单表达式闭包可以省略 return 关键字  参数名称缩写 尾随闭包语法    闭包表达式 语法{ (paramet">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-23T07:41:40.000Z">
+<meta property="og:updated_time" content="2020-04-13T01:57:29.661Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/links/index.html">
+  <link rel="canonical" href="http://yoursite.com/2019/11/01/Swift%20%E9%97%AD%E5%8C%85/index.html">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -41,7 +41,7 @@
 </head>
 
 
-<body class="main-center theme-black no-sidebar" itemscope itemtype="http://schema.org/WebPage">
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
   <div class="slimContent">
     <div class="navbar-header">
@@ -310,28 +310,278 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="article article-links article-type-list" itemscope="">
-  <header class="article-header">
-    <h1 itemprop="title">友情链接</h1>
-    <p class="text-muted">
-      欢迎交换链接，可在当前页面留言
-    </p>
-  </header>
-  <div class="article-body">
-    <div class="row">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Swift 闭包" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Swift 闭包
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/01/Swift%20%E9%97%AD%E5%8C%85/" class="article-date">
+	  <time datetime="2019-11-01T12:01:22.000Z" itemprop="datePublished">2019-11-01</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Swift/">Swift</a>
+  </span>
+
+        
+
+        
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2019/11/01/Swift%20%E9%97%AD%E5%8C%85/" class="leancloud_visitors"  data-flag-title="Swift 闭包">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/01/Swift%20%E9%97%AD%E5%8C%85/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><p><strong>是自包含的函数代码块，可以在代码中被传递和使用</strong>。Swift 中的闭包与 C 和 Objective-C 中的代码块（blocks）以及其他一些编程语言中的匿名函数比较相似。</p>
+</li>
+<li><p>相对于Objective-C 有如下优化点</p>
+<ul>
+<li>利用上下文推断参数和返回值类型</li>
+<li>隐式返回单表达式闭包，即单表达式闭包可以<strong>省略 return</strong> 关键字 </li>
+<li>参数名称缩写</li>
+<li>尾随闭包语法</li>
+</ul>
+</li>
+</ul>
+<h3 id="闭包表达式"><a href="#闭包表达式" class="headerlink" title="闭包表达式"></a>闭包表达式</h3><ul>
+<li>语法<pre>{ (parameters) -> returnType in
+      statements
+}</pre></li>
+<li>注意点：<ul>
+<li>可以是 in-out 参数（Swift参数默认不能修改，但是使用关键字<strong>inout</strong>修饰之后，就可以修改，这样的参数，叫做in-out参数），但不能设定默认值 </li>
+<li>也可以使用具名的可变参数（用…修饰）（注：但是如果可变参数不放在参数列表的最后一位的话，调用闭包的时时编译器将报错。）</li>
+<li><pre>func add(a:Int, b:Int ,others:Int ...) -> Int {
+var result = a + b
+for num in others {
+result += num
+}
+return result
+}
+let number = add(2, b: 5, others: 2, 50, 4)
+print(number)</pre>
+<ul>
+<li>元组也可以作为参数和返回值</li>
+<li>Swift 自动为内联闭包提供了参数名称缩写功能，你可以直接通过 <strong>$0，$1，$2</strong> 来顺序调用闭包的参数，以此类推。<pre>reversedNames = names.sorted(by: >)<br></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="尾随闭包"><a href="#尾随闭包" class="headerlink" title="尾随闭包"></a>尾随闭包</h3><ul>
+<li>概念：尾随闭包是一个书写在函数括号之后的闭包表达式，函数支持将其作为最后一个参数调用。在使用尾随闭包时，你不用写出它的参数标签。</li>
+<li><pre>func someFunctionThatTakesAClosure(closure: () -> Void) {
+  // 函数体部分
+}
+// 以下是不使用尾随闭包进行函数调用
+someFunctionThatTakesAClosure(closure: {
+  // 闭包主体部分
+})
+// 以下是使用尾随闭包进行函数调用
+someFunctionThatTakesAClosure() {
+  // 闭包主体部分
+}</pre></li>
+<li>注意：如果闭包表达式是<strong>函数或方法的唯一参数</strong>，则当你使用尾随闭包时，你甚至可以把 () 省略掉：<pre>reversedNames = names.sorted { $0 > $1 }<br></pre></li>
+</ul>
+<h3 id="值捕获"><a href="#值捕获" class="headerlink" title="值捕获"></a>值捕获</h3><ul>
+<li>概念：闭包可以在其被定义的<strong>上下文中捕获常量或变量</strong>，即使定义这些常量和变量的原作用域已经不存在，闭包仍然可以在闭包函数体内引用和修改这些值。</li>
+<li>原因:函数和闭包都是<strong>引用类型</strong>。无论你将函数或闭包赋值给一个常量还是变量，你实际上都是将常量或变量的值设置为对应函数或闭包的引用。</li>
+</ul>
+<h3 id="逃逸闭包"><a href="#逃逸闭包" class="headerlink" title="逃逸闭包"></a>逃逸闭包</h3><ul>
+<li>概念：当一个闭包作为参数传到一个函数中，但是<strong>这个闭包在函数返回之后才被执行</strong>，我们称该闭包从函数中逃逸。你可以在参数名之前标注 <strong>@escaping</strong>，用来指明这个闭包是允许“逃逸”出这个函数的。</li>
+<li><em>逃逸闭包就是把这个传入的block可以保存在外部.等待某一时刻你可以再次调用这个block.这一个时刻是在函数返回之后.*</em></li>
+</ul>
+<pre>//一种能使闭包“逃逸”出函数的方法是，将这个闭包保存在一个函数外部定义的变量中。
+//这里是一个闭包数组
+typealias completionHandlerBlock = () -> Void
+var completionHandlers: [completionHandlerBlock] = []
+class SomeClass {
+    var x = 10
+    func doSomething() {
+        someFunctionWith_Escaping_Closure { self.x = 100 }  //将一个闭包标记为 @escaping 意味着你必须在闭包中显式地引用 self。
+        someFunctionWith_Non_Escaping_Closure { x = 200 }   //不带self
+    }
+    //逃逸闭包
+    func someFunctionWith_Escaping_Closure(completionHandler: @escaping completionHandlerBlock) {
+        //函数接受一个闭包作为参数，该闭包被添加到一个函数外定义的数组中。如果你不将这个参数标记为 @escaping，就会得到一个编译错误。
+        completionHandlers.append(completionHandler)
+    }
+
+    //非逃逸闭包
+    func someFunctionWith_Non_Escaping_Closure(closure: () -> Void) {
+        //该闭包是一个非逃逸闭包，这意味着它可以隐式引用 self。同时无法保存在外部
+        completionHandlers.append(closure)  //报错 : Passing non-escaping parameter 'closure' to function expecting an @escaping closure
+        closure()
+    }
+}
+let instance = SomeClass()
+instance.doSomething()
+print(instance.x)
+// 打印出 "200"
+
+completionHandlers.first?()
+print(instance.x)
+// 打印出 "100"</pre>
+
+<h3 id="自动闭包"><a href="#自动闭包" class="headerlink" title="自动闭包"></a>自动闭包</h3><ul>
+<li>概念：autoclosure 做的事情就是<strong>把⼀句表达式⾃动地封装成⼀个闭包 *<em>(closure)，使用 *</em>@autoclosure</strong>来进行修饰。<pre>
+func logIfTrue(_ predicate:@autoclosure () -> Bool) {
+      if predicate() {
+          print("true")
+      }
+  }
+  //调用的时候可以直接写:
+  logIfTrue(2>1)</pre>
+</li>
+</ul>
+
       
     </div>
-  </div>
-</article>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/liuxueming" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/liuxueming" target="_blank"><span class="text-dark">。</span><small class="ml-1x">Developer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
+    
   <section id="comments">
   	
       <div id="vcomments"></div>
     
   </section>
 
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/11/01/Redux%20%E7%AC%94%E8%AE%B0/" title="Redux 笔记"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2019/10/13/Swift%20%E6%9E%9A%E4%B8%BE/" title="Swift 枚举"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -378,6 +628,10 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 <script src="/js/insight.js"></script>
 
 
+
+
+
+   
 
 
 
